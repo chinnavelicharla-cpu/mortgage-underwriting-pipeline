@@ -1,0 +1,19 @@
+
+name: mortgage_underwriting
+version: '1.0.0'
+config-version: 2
+
+profile: mortgage_underwriting
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+models:
+  mortgage_underwriting:
+    silver:
+      +schema: SILVER
+      +materialized: view
+    gold:
+      +schema: GOLD
+      +materialized: table
