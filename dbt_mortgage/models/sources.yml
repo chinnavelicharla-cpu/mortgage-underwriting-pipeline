@@ -1,0 +1,23 @@
+
+version: 2
+
+sources:
+  - name: mortgage_raw
+    database: MORTGAGE_DB
+    schema: RAW
+    description: "Raw mortgage and credit bureau source data"
+
+    tables:
+      - name: mortgage_applications_raw
+        description: "Mortgage application JSON records"
+        columns:
+          - name: PAYLOAD
+            description: "Original application JSON payload"
+
+      - name: credit_bureau_raw
+        description: "Credit bureau CSV records"
+        columns:
+          - name: APPLICANT_ID
+          - name: SSN
+          - name: CREDIT_SCORE
+          - name: MONTHLY_DEBT
