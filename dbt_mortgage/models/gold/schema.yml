@@ -1,0 +1,29 @@
+
+version: 2
+
+models:
+  - name: fct_underwriting_decisions
+    description: "Gold mortgage underwriting decisions"
+
+    columns:
+      - name: APPLICANT_ID
+        description: "Unique mortgage applicant identifier"
+        tests:
+          - not_null
+          - unique
+
+      - name: LTV_PERCENT
+        description: "Loan-to-value percentage"
+
+      - name: DTI_PERCENT
+        description: "Debt-to-income percentage"
+
+      - name: DECISION_STATUS
+        description: "Final underwriting decision"
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - APPROVED
+                - DECLINED
+                - REQUIRES_COSIGNER
